@@ -1,8 +1,10 @@
+import { ToastrModule } from 'ngx-toastr';
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { HomeComponent } from './home.component';
 import { BannerComponent } from './banner/banner.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { BannerComponent } from './banner/banner.component';
     BannerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ToastrModule.forRoot()
   ],
   exports: [HomeComponent]
 })

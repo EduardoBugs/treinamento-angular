@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { map, Subscription, tap } from 'rxjs';
+
+import { Component, inject } from '@angular/core';
+
+import { Categoria } from '../core/categoria/categoria.interface';
+import { CategoriaService } from '../core/categoria/categoria.service';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +12,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  categoriaService = inject(CategoriaService);
+  toastrService = inject(ToastrService);
+
+  teste$: Subscription = new Subscription;
+
+  categorias$ = this.categoriaService.list();
 
   get bannerTitle() {
     return 'Dezembro Promocional';

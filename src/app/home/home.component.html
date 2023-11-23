@@ -6,5 +6,11 @@
       [buttonText]="buttonText"
     ></app-banner>
   </section>
-  <section class="produtos"></section>
+  <section class="produtos">
+    <ng-container *ngIf="categorias$ | async as categorias">
+      <ng-container *ngFor="let cat of categorias">
+        <span>{{ cat.name }}</span>
+      </ng-container>
+    </ng-container>
+  </section>
 </main>
