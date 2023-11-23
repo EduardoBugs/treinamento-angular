@@ -1,0 +1,51 @@
+<div class="footer-form">
+  <span>Fale conosco</span>
+  <form [formGroup]="formFaleConosco" (submit)="enviarMensagem()">
+    <div class="input-nome">
+      <input
+        formControlName="name"
+        type="text"
+        placeholder="Nome"
+        maxlength="40"
+      />
+
+      <ng-container
+        *ngIf="
+          formControls['name'].invalid &&
+          (!formControls['name'].pristine || formControls['name'].touched)
+        "
+      >
+        <span
+          *ngIf="formControls['name'].errors?.['required']"
+          class="input-error-message"
+          >Informe seu nome</span
+        >
+        <span
+        *ngIf="formControls['name'].errors?.['minlength']"
+        class="input-error-message"
+        >Tamanho Mínimo Inválido</span
+      >        
+      </ng-container>
+    </div>
+
+    <div class="input-message">
+      <textarea
+        formControlName="mensagem"
+        cols="30"
+        rows="4"
+        maxlength="120"
+        placeholder="Escreva sua mensagem"
+      ></textarea>
+    </div>
+
+    <div>
+      <button
+        type="submit"
+        [disabled]="!formFaleConosco.valid"
+        [ngClass]="{ submitDesabilitado: !formFaleConosco.valid }"
+      >
+        Enviar mensagem
+      </button>
+    </div>
+  </form>
+</div>

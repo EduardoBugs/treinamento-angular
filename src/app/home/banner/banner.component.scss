@@ -1,0 +1,44 @@
+.alura-geek-banner {
+  background-image: url(/assets/images/banner/banner-image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 352px;
+  width: 100vw;
+
+  .banner-wrapper {
+      width: 1136px;
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0px;
+      margin: 0 auto;
+      position: relative;
+      top: 150px;
+
+      .banner-title {
+          font-weight: 700;
+          font-size: 52px;
+          color: #fff;
+          margin: 0;
+      }
+
+      .banner-description {
+          font-weight: 700;
+          font-size: 22px;
+          color: #fff;
+          margin: 24px 0;
+      }
+
+      .banner-button {
+          font-weight: 400;
+          border: none;
+          padding: 16px;
+          font-size: 16px;
+          color: #fff;
+          cursor: pointer;
+          background-color: #2a7ae4;
+      }
+  }
+}

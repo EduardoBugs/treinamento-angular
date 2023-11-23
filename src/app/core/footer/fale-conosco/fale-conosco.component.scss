@@ -1,0 +1,74 @@
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+
+  span {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  label {
+    position: relative;
+    display: none;
+  }
+
+  .input-nome {
+    width: 550px;
+    height: 56px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+
+    input {
+      margin-top: 15px;
+      width: 540px;
+      height: 22px;
+      border: none;
+    }
+  }
+
+  .input-message {
+    outline: none;
+    margin-bottom: 0.5rem;
+    resize: none;
+    width: 550px;
+    margin: 0.5rem 0;
+    background-color: #fff;
+    padding-left: 1rem;
+
+    textarea {
+      border: none;
+      resize: none;
+      width: 548px;
+      padding-top: 1rem;
+    }
+  }
+
+  button {
+    font-weight: 400;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #2a7ae4;
+    width: 165px;
+  }
+
+  .submitDesabilitado {
+    background-color: gray;
+    cursor: initial;
+  }
+
+  .input-error-message {
+    font-size: .75rem;
+    color: #f36b6b;
+    text-align: right;
+    width: 100%;
+    margin-bottom: -12px;
+    font-weight: 100;
+  }
+}

@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 115px;
+
+  .header-container {
+      display: flex;
+      align-items: center;
+      width: 656px;
+
+      .header-logo {
+          margin-right: 32px;
+          cursor: pointer;
+      }
+  }
+}

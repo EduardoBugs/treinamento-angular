@@ -1,0 +1,14 @@
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 234px;
+  width: 176px;
+
+  a {
+      text-decoration: none;
+      font-weight: 500px;
+      color: var(--text-color);
+      font-size: 1rem;
+  }
+}
