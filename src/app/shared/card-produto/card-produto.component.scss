@@ -1,0 +1,51 @@
+.categoria-produto {
+  display: flex;
+  flex-direction: column;
+
+  .produto-img-actions {
+    position: relative;
+
+    .produto-img {
+      width: 176px;
+      height: 174px;
+      display: block;
+    }
+
+    .edit-icon {
+      position: absolute;
+      top: 11px;
+      left: 147px;
+      color: lightgray;
+      cursor: pointer;
+    }
+
+    .delete-icon {
+      position: absolute;
+      top: 11px;
+      left: 109px;
+      color: lightgray;
+      cursor: pointer;
+    }
+  }
+
+  .produto-description {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .produto-valor {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+
+  .produto-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary-color);
+  }
+}

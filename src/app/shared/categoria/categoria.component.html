@@ -1,1 +1,11 @@
-<p>categoria works!</p>
+<div class="categoria-content">
+  <div class="categoria-header">
+    <h2>{{ title }}</h2>
+    <a *ngIf="linkVerTudo" href="javascript: void(0);">Ver tudo<i>→</i></a>
+  </div>
+  <ul class="categoria-produtos">
+    <li *ngFor="let produto of produto$ | async">
+      <app-card-produto [produto]="produto" (excluir)="onExcluir($event)"></app-card-produto>
+    </li>
+  </ul>
+</div>

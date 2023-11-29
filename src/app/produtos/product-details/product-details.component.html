@@ -1,0 +1,21 @@
+<main>
+  <div class="product-wrapper">
+    <ng-container *ngIf="produto$ | async as produto">
+      <div class="product-content">
+        <img class="product-img" src="{{ produto.img }}" alt="" />
+        <div class="product-details">
+          <h2>{{ produto.name }}</h2>
+          <span>{{ precoProduto(produto.price) | currency }}</span>
+          <p>{{ produto.description }}</p>
+        </div>
+      </div>
+      <div class="product-galery">
+        <app-categoria
+          [nomeCategoria]="produto.category"
+          title="Produtos similares"
+          [linkVerTudo]="false"
+        ></app-categoria>
+      </div>
+    </ng-container>
+  </div>
+</main>

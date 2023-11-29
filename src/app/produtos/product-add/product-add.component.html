@@ -1,0 +1,157 @@
+<main class="add-product">
+  <form
+    class="product-form"
+    [formGroup]="productForm"
+    (submit)="adicionarProduto()"
+  >
+    <h2 class="title">Adicionar novo produto</h2>
+
+    <div class="image-select">
+      <div
+        class="custom-dropzone"
+        ngx-dropzone
+        [accept]="'image/*'"
+        [multiple]="false"
+        (change)="onSelect($event)"
+      >
+        <ngx-dropzone-label>
+          <div class="image-select-info">
+            <span class="image-select-icon">
+              <fa-icon [icon]="faImage" size="2x"></fa-icon> </span
+            ><span class="image-select-text"
+              >Arraste para adicionar uma imagem para o produto</span
+            >
+            <span class="image-select-text">Ou</span>
+            <span class="image-select-text"
+              >Clique para procurar no seu computador</span
+            >
+          </div>
+        </ngx-dropzone-label>
+        <ngx-dropzone-image-preview
+          class="image-select-preview"
+          ngProjectAs="ngx-dropzone-preview"
+          *ngFor="let f of files"
+          [file]="f"
+          [removable]="true"
+          (removed)="onRemove(f)"
+        >
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-image-preview>
+      </div>
+      <ng-container *ngIf="isMissingFile">
+        <span class="input-error-message">Selecione a imagem do produto</span>
+      </ng-container>
+    </div>
+
+    <div class="input-field-box">
+      <div class="input-field-content">
+        <label class="input-label" for="name">Nome do produto</label>
+        <input
+          class="input-text"
+          type="text"
+          formControlName="name"
+          maxlength="20"
+        />
+      </div>
+      <ng-container
+        *ngIf="
+          formControls['name'].invalid &&
+          (formControls['name'].dirty || formControls['name'].touched)
+        "
+      >
+        <span
+          *ngIf="formControls['name'].errors?.['required']"
+          class="input-error-message"
+          >Informe o nome do produto</span
+        >
+      </ng-container>
+    </div>
+
+    <div class="input-field-box">
+      <div class="input-field-content">
+        <label class="input-label" for="categoria">Categoria do produto</label>
+        <input
+          class="input-text"
+          type="text"
+          formControlName="categoria"
+          maxlength="20"
+        />
+      </div>
+      <ng-container
+        *ngIf="
+          formControls['categoria'].invalid &&
+          (formControls['categoria'].dirty || formControls['categoria'].touched)
+        "
+      >
+        <span
+          *ngIf="formControls['categoria'].errors?.['required']"
+          class="input-error-message"
+          >Informe a categoria do produto</span
+        >
+        <span
+          *ngIf="formControls['categoria'].errors?.['maxlength']"
+          class="input-error-message"
+          >Execedeu tamanho máximo</span
+        >
+      </ng-container>
+    </div>
+
+    <div class="input-field-box">
+      <div class="input-field-content">
+        <label class="input-label" for="price">Preço do produto</label>
+        <input
+          mask="separator.2" thousandSeparator="." prefix="R$ " decimalMarker=","
+          maxlength="11"
+          class="input-text"
+          formControlName="price"
+        />
+      </div>
+      <ng-container
+        *ngIf="
+          formControls['price'].invalid &&
+          (formControls['price'].dirty || formControls['price'].touched)
+        "
+      >
+        <span
+          *ngIf="formControls['price'].errors?.['required']"
+          class="input-error-message"
+          >Informe o preço do produto</span
+        >
+      </ng-container>
+    </div>
+
+    <div class="text-field-box">
+      <div class="text-field-content">
+        <label class="input-label" for="description"
+          >Descrição do produto</label
+        >
+        <textarea
+          class="text-area"
+          formControlName="description"
+          maxlength="150"
+        ></textarea>
+      </div>
+      <ng-container
+        *ngIf="
+          formControls['price'].invalid &&
+          (formControls['price'].dirty || formControls['price'].touched)
+        "
+      >
+        <span
+          *ngIf="formControls['price'].errors?.['required']"
+          class="input-error-message"
+          >Informe a descrição do produto</span
+        >
+      </ng-container>
+    </div>
+
+    <button
+      class="btn-adicionar"
+      type="submit"
+      [disabled]="isMissingFile || !productForm.valid"
+      [ngClass]="{ 'add-disable': !productForm.valid || isMissingFile}"
+    >
+      Adicionar produto
+    </button>
+  </form>
+</main>

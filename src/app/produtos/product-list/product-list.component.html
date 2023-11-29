@@ -1,0 +1,15 @@
+<main>
+  <div class="lista-produtos">
+    <div class="lista-content">
+      <div class="lista-header">
+        <h2>Todos os produtos</h2>
+        <button *ngIf="isLogged" class="lista-button" (click)="adicionarProduto()">Adicionar produto</button>
+      </div>
+      <ul class="produtos">
+        <li *ngFor="let produto of produtos$ | async">
+          <app-card-produto [produto]="produto"></app-card-produto>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'reset';
+@import 'normalize';
+@import 'globalStyle';
+
+@font-face {
+    font-family: "Raleway";
+    src: local("Raleway"), url(./assets/fonts/raleway/Raleway-VariableFont_wght.ttf) format("truetype");
+}

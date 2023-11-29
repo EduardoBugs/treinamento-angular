@@ -7,10 +7,10 @@
     ></app-banner>
   </section>
   <section class="produtos">
-    <ng-container *ngIf="categorias$ | async as categorias">
-      <ng-container *ngFor="let cat of categorias">
-        <span>{{ cat.name }}</span>
-      </ng-container>
-    </ng-container>
+    <app-categoria
+      *ngFor="let categoria of categorias$ | async"
+      [nomeCategoria]="categoria.name"
+      [title]="categoria.name"
+    ></app-categoria>
   </section>
 </main>

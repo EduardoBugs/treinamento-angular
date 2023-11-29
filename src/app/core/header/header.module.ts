@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header.component';
+import { SearchBarModule } from './search-bar/search-bar.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { HeaderComponent } from './header.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SearchBarModule
   ],
   exports: [HeaderComponent]
 })

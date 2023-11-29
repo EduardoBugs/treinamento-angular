@@ -15,8 +15,6 @@ export class HomeComponent {
   categoriaService = inject(CategoriaService);
   toastrService = inject(ToastrService);
 
-  teste$: Subscription = new Subscription;
-
   categorias$ = this.categoriaService.list();
 
   get bannerTitle() {

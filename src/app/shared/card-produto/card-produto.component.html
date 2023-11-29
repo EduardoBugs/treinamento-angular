@@ -1,0 +1,11 @@
+<div class="categoria-produto">
+  <div class="produto-img-actions">
+    <img class="produto-img" src="{{ produto.img }}" alt="" />
+
+    <fa-icon *ngIf="true" class="edit-icon" [icon]="faPen" (click)="editarProduto()"></fa-icon>
+    <fa-icon *ngIf="true" class="delete-icon" [icon]="faTrash" (click)="excluirProduto()"></fa-icon>
+  </div>
+  <p class="produto-description">{{ produto.name }}</p>
+  <span class="produto-valor">{{ precoProduto | currency }}</span>
+  <a class="produto-link" href="javascript: void(0);" (click)="detalhesProduto()">Ver produto</a>
+</div>
